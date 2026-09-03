@@ -1,25 +1,41 @@
 <script setup>
-import {ref} from 'vue';
-const name = "Vue dinámico";
+import { ref, computed } from 'vue'; // 1. Importamos computed
 
+const name = "Vue dinámico";
 
 const counter = ref(0);
 const increment = () => {
-  counter.value ++;
-}
+  counter.value++;
+};
 
-const decrement = () =>{
-  counter.value --;
-}
+const decrement = () => {
+  counter.value--;
+};
 
 const reset = () => {
   counter.value = 0;
-}
+};
+
+// 2. Corregimos la lógica del computed
+const classCounter = computed(() => {
+  if (counter.value === 0) {
+    return 'zero';
+  }
+  if (counter.value > 0) { // Corregido: mayor que 0
+    return 'positive';
+  }
+  if (counter.value < 0) {
+    return 'negative';
+  }
+});
 </script>
 
 <template>
   <h1>Hola {{ name.toUpperCase() }}</h1>
-  <h2 :class="counter > 0 ? 'positive' :'negative'" >{{counter}}</h2>
+
+  <!-- 3. Vinculamos el computed a la directiva :class -->
+  <h2 :class="classCounter">{{ counter }}</h2>
+
   <button @click="increment()">Aumentar</button>
   <button @click="decrement()">Disminuir</button>
   <button @click="reset()">Resetear</button>
@@ -29,10 +45,13 @@ const reset = () => {
 h1 {
   color: red;
 }
-.positive{
-  color:green;
+.positive {
+  color: green;
 }
-.negative{
-  color:red;
+.negative {
+  color: red;
+}
+.zero {
+  color: peru;
 }
 </style>
