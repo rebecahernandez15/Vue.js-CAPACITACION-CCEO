@@ -1,12 +1,11 @@
 <script setup>
+import {ref} from 'vue';
 const name = "Vue dinámico";
 
 
-let counter = 0;
+const counter = ref(0);
 const increment = () => {
-  console.log('aumentar contador');
-  counter++;
-  console.log(counter)
+  counter.value ++;
 }
 </script>
 
