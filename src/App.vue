@@ -1,17 +1,37 @@
 <script setup>
 const name = "Vue dinámico";
-const styleColor = "color: blue";
-const arrayColores = ["blue", "red", "peru"];
-const activo = false;
+const arrayFrutas = [
+  {
+    name: "Manzana",
+    price: "$1.00",
+    description: "Una manzana",
+    id:1
+  },
+  {
+    name: "Pera",
+    price: "$2.00",
+    description: "Una pera",
+    id:2
+  },
+  {
+    name: "Naranja",
+    price: "$3.00",
+    description: "Una naranja",
+    id:3
+  },
+];
 </script>
+
 
 <template>
   <h1>Hola {{ name.toUpperCase() }}</h1>
-  <h2>{{ arrayColores }}</h2>
-  <h2 :style="`color: ${arrayColores[2]}`">Soy Perú</h2>
-  <h2>
-    {{ activo ? "Estoy activo" : "Estoy inactivo" }}
-  </h2>
+  <ul>
+    <li
+        v-for="fruta in arrayFrutas"
+        :key="fruta.name"
+    >
+      {{fruta.name}} - {{fruta.price}} - {{fruta.description}}  </li>
+  </ul>
 </template>
 
 <style>
