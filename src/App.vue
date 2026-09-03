@@ -1,36 +1,20 @@
 <script setup>
 const name = "Vue dinámico";
-const arrayFrutas = [
-  {
-    name: "Manzana",
-    price: "$1.00",
-    description: "Una manzana",
-    id:1
-  },
-  {
-    name: "Pera",
-    price: "$2.00",
-    description: "Una pera",
-    id:2
-  },
-  {
-    name: "Naranja",
-    price: "$3.00",
-    description: "Una naranja",
-    id:3
-  },
-];
+const objetoFruta = {
+  name: "Manzana",
+  price: "$1.00",
+  description: "Una manzana",
+  id: 1,
+};
 </script>
-
 
 <template>
   <h1>Hola {{ name.toUpperCase() }}</h1>
+  {{ objetoFruta }}
   <ul>
-    <li
-        v-for="fruta in arrayFrutas"
-        :key="fruta.name"
-    >
-      {{fruta.name}} - {{fruta.price}} - {{fruta.description}}  </li>
+    <li v-for="(value,propiedad, index) in objetoFruta" :key="index">
+      {{index}} - {{propiedad}} : {{ value }}
+    </li>
   </ul>
 </template>
 
