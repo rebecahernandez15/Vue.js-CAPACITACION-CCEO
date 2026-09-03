@@ -1,4 +1,4 @@
-<!-- v-on se puede acortar con @ -->
+<!-- modificadores  -->
 
 <script setup>
 const name = "Vue dinámico";
@@ -11,8 +11,9 @@ const handleClick = (message) =>{
 
 <template>
   <h1>Hola {{ name.toUpperCase() }}</h1>
-  <button v-on:click="handleClick('texto 1')">Activame</button>
-  <button @click="handleClick('texto 2')">Activame 2</button>
+  <button v-on:click.right.prevent="handleClick('texto rigth')">Activame rigth</button>
+  <button @click="handleClick('texto left')">Activame left</button>
+  <button @click.middle="handleClick('texto middle')">Activame middle</button>
 </template>
 
 <style>
