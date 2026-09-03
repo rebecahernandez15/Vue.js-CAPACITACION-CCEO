@@ -1,5 +1,5 @@
 <script setup>
-import { ref, computed } from 'vue'; // 1. Importamos computed
+import { ref, computed } from 'vue';
 
 const name = "Vue dinámico";
 
@@ -44,21 +44,33 @@ const classCounter = computed(() => {
 </script>
 
 <template>
-  <h1>Hola {{ name.toUpperCase() }}</h1>
-
-  <h2 :class="classCounter">{{ counter }}</h2>
-
-  <button @click="increment()">Aumentar</button>
-  <button @click="decrement()">Disminuir</button>
-  <button @click="reset()">Resetear</button>
-  <button @click="add":disabled="bloquearBtnAdd">Add</button>
-  <br/>
-  {{arrayFavoritos}}
-  <ul>
-    <li v-for="(num,index) in arrayFavoritos" :key="index">
-      {{num}}
-    </li>
-  </ul>
+  <div class="container text-center mt-3">
+    <h1>Hola {{ name.toUpperCase() }}</h1>
+    <h2 :class="classCounter">{{ counter }}</h2>
+    <div class="btn-group">
+      <button @click="increment" class="btn btn-success">
+        Increment
+      </button>
+      <button @click="decrement" class="btn btn-danger">Decrement</button>
+      <button @click="reset" class="btn btn-secondary">Reset</button>
+      <button
+          @click="add"
+          :disabled="bloquearBtnAdd"
+          class="btn btn-primary"
+      >
+        Add
+      </button>
+    </div>
+    <ul class="list-group mt-4">
+      <li
+          class="list-group-item"
+          v-for="(num, index) in arrayFavoritos"
+          :key="index"
+      >
+        {{ num }}
+      </li>
+    </ul>
+  </div>
 </template>
 
 <style>
