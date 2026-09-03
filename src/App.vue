@@ -39,6 +39,7 @@ const classCounter = computed(() => {
   <button @click="increment()">Aumentar</button>
   <button @click="decrement()">Disminuir</button>
   <button @click="reset()">Resetear</button>
+  <button :disabled="false">Add</button>
 </template>
 
 <style>
