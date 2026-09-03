@@ -1,19 +1,19 @@
-<!-- modificadores  -->
-
 <script setup>
 const name = "Vue dinámico";
 
-//metodo -methos
-const handleClick = (message) =>{
-  console.log(message)
+
+let counter = 0;
+const increment = () => {
+  console.log('aumentar contador');
+  counter++;
+  console.log(counter)
 }
 </script>
 
 <template>
   <h1>Hola {{ name.toUpperCase() }}</h1>
-  <button v-on:click.right.prevent="handleClick('texto rigth')">Activame rigth</button>
-  <button @click="handleClick('texto left')">Activame left</button>
-  <button @click.middle="handleClick('texto middle')">Activame middle</button>
+  <h2>{{counter}}</h2>
+  <button @click="increment()">Aumentar</button>
 </template>
 
 <style>
