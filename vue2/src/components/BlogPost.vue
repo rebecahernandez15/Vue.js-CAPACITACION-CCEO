@@ -14,9 +14,10 @@ defineProps({
 <template>
   <div class="card">
     <div class="card-body">
-      <h5 class="card-title">{{id}} - {{tittle}}
-      </h5>
-      <p> Lorem ipsum dolor sit amet.</p>
+      <h5 class="card-title">{{id}} - {{tittle}}</h5>
+      <p> {{body}}</p>
+      <button @click="$emit('cambiarFavorito',tittle)"
+              class="btn btn-outline-primary">Favorito</button>
     </div>
   </div>
 </template>
