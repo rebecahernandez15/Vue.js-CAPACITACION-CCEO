@@ -1,11 +1,16 @@
 <script setup>
-const emit = defineEmits(['next','prev']);
+defineProps({
+  inicio: Number,
+  fin: Number,
+  maxLength: Number
+});
+
+const emit = defineEmits(['next', 'prev']);
 
 const activarSiguiente = () => {
   console.log('me diste a siguiente');
   emit('next');
-}
-
+};
 </script>
 
 <template>
@@ -13,10 +18,18 @@ const activarSiguiente = () => {
     <button
         @click="emit('prev')"
         type="button"
-        class="btn btn-outline-primary">Previus</button>
+        class="btn btn-outline-primary"
+        :disabled="inicio <= 0"
+    >
+      Previous {{ inicio }}
+    </button>
     <button
         @click="activarSiguiente"
         type="button"
-        class="btn btn-outline-primary">Next</button>
+        class="btn btn-outline-primary"
+        :disabled="fin >= maxLength"
+    >
+      Next {{ fin }}
+    </button>
   </div>
 </template>
