@@ -10,10 +10,10 @@ import BlogPost from "@/components/BlogPost.vue";
     <buttonCounter/>
 
 
-    <BlogPost tittle="Post 1"/>
-    <BlogPost tittle="Post 2"/>
-    <BlogPost tittle="Post 3"/>
-    <BlogPost tittle="Post 4"/>
+    <BlogPost tittle="Post 1" id="1" body="description1" colorText="primary"/>
+    <BlogPost tittle="Post 2" id="2" body="description2" colorText="secondary"/>
+    <BlogPost tittle="Post 3" id="3" body="description3" colorText="success"/>
+    <BlogPost tittle="Post 4" id="4" body="description4" colorText="primary"/>
   </div>
 </template>
 
