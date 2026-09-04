@@ -1,13 +1,14 @@
 <script setup>
-
-defineProps(['tittle']);
-
+defineProps(['tittle','id','body','colorText']);
 </script>
 
 <template>
-  <div class ="card">
+  <div class="card">
     <div class="card-body">
-      <h5 class = "card-title">{{tittle}}</h5>
+      <h5
+          class="card-title"
+          :class="`text-${colorText}`"
+      >{{id}} - {{tittle}}</h5>
       <p> Lorem ipsum dolor sit amet.</p>
     </div>
   </div>
