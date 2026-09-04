@@ -5,6 +5,7 @@ const name = "Vue dinámico";
 
 const counter = ref(0);
 const increment = () => {
+<<<<<<< HEAD
   counter.value++;
 };
 
@@ -28,6 +29,7 @@ const classCounter = computed(() => {
     return 'negative';
   }
 });
+
 </script>
 
 <template>
@@ -37,8 +39,6 @@ const classCounter = computed(() => {
   <h2 :class="classCounter">{{ counter }}</h2>
 
   <button @click="increment()">Aumentar</button>
-  <button @click="decrement()">Disminuir</button>
-  <button @click="reset()">Resetear</button>
 </template>
 
 <style>
