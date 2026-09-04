@@ -3,11 +3,14 @@ import {computed, ref} from "vue";
 
 import PaginatePost from "./components/PaginatePost.vue";
 import BlogPost from "./components/BlogPost.vue";
+import LoadingSpinner from "@/components/LoadingSpinner.vue";
 
 const posts = ref([]);
 const postXpage = 10;
 const inicio = ref(0);
 const fin = ref(postXpage);
+const loading = ref(false);
+
 
 const favorito = ref("");
 
@@ -36,7 +39,8 @@ const maxLength = computed(() => posts.value.length)
 </script>
 
 <template>
-  <div class="container my-4">
+  <LoadingSpinner v-if="loading"/>
+  <div class="container my-4" v-else>
     <h1>APP</h1>
     <h2>Mis Post Favorito: {{ favorito }}</h2>
 
