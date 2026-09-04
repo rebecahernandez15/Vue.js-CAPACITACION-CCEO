@@ -32,9 +32,16 @@ fetch("https://jsonplaceholder.typicode.com/posts")
     .then((res) => res.json())
     .then((data) => {
       posts.value = data;
-    });
+    })
+    .catch(e => console.log(e))
+    .finally(() => loading.value = false);
 
-const maxLength = computed(() => posts.value.length)
+const maxLength = computed(() => {
+  setTimeout(() => {
+    loading.value=false
+  },2000);
+
+})
 
 </script>
 
