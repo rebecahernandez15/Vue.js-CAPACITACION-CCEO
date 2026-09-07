@@ -14,7 +14,7 @@ const back = () => {
 const getData = async () => {
   try {
     const { data } = await axios.get(
-        `https://pokeapi.co/api/v2/pokemon/${route.params.name}`
+      `https://pokeapi.co/api/v2/pokemon/${route.params.name}`
     );
     poke.value = data;
   } catch (error) {
