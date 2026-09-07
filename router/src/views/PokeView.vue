@@ -1,8 +1,13 @@
 <script setup>
 import axios from "axios";
-import {useRoute} from 'vue-router'
+import {useRoute,useRouter} from 'vue-router'
 
-const route = useRoute()
+const route = useRoute();
+const router = useRouter();
+
+const back = () => {
+  router.push('/pokemons')
+}
 
 const getData = async () => {
   try {
@@ -20,4 +25,5 @@ getData();
 
 <template>
   <h1>Poke name: {{ $route.params.name }}</h1>
+  <button @click="back">Volver</button>
 </template>
