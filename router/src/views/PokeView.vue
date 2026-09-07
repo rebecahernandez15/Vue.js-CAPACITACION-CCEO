@@ -13,7 +13,6 @@ const back = () => {
 
 getData(`https://pokeapi.co/api/v2/pokemon/${route.params.name}`);
 </script>
-
 <template>
   <p v-if="loading">Cargando información...</p>
   <div class="alert alert-danger mt-2" v-if="error">{{ error }}</div>
