@@ -18,7 +18,6 @@ export const useGetData = () => {
             loading.value = false;
         }
     };
-
     return {
         getData,
         data,
