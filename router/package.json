@@ -11,6 +11,8 @@
   "dependencies": {
     "axios": "^1.20.0",
     "bootstrap": "^5.3.8",
+    "pina": "^0.0.1-security.2",
+    "pinia": "^4.0.3",
     "vue": "^3.5.40",
     "vue-router": "^5.2.0"
   },
