@@ -7,11 +7,11 @@ import { RouterLink, RouterView } from 'vue-router'
     <div class="container">
       <router-link class="navbar-brand" to="/">
         <img
-            src="@/assets/logo.svg"
-            alt=""
-            width="30"
-            height="24"
-            class="d-inline-block align-text-top"
+          src="@/assets/logo.svg"
+          alt=""
+          width="30"
+          height="24"
+          class="d-inline-block align-text-top"
         />
         PokeAPI
       </router-link>
