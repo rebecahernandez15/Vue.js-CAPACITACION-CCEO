@@ -7,7 +7,7 @@ const route = useRoute();
 const router = useRouter();
 const useFavoritos = useFavoritosStore();
 
-const { add } = useFavoritos;
+const { add, findPoke } = useFavoritos;
 
 const { getData, data, loading, error } = useGetData();
 
@@ -24,7 +24,7 @@ getData(`https://pokeapi.co/api/v2/pokemon/${route.params.name}`);
   <div v-if="data">
     <img :src="data.sprites?.front_default" alt="" />
     <h1>Poke name: {{ $route.params.name }}</h1>
-    <button class="back btn btn-outline-primary mb-2 " @click="add(data)">Agregar favoritos</button>
+    <button :disabled="findPoke(data.name)" class="back btn btn-outline-primary mb-2 " @click="add(data)">Agregar favoritos</button>
   </div>
   <button @click="back" class="btn btn-outline-primary">Volver</button>
 </template>
